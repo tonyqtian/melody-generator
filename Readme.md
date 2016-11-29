@@ -37,11 +37,11 @@ g = tflearn.regression(g, optimizer='adam', loss='categorical_crossentropy', lea
 
 ## Quick Start
 
-### Get some midi file
+### 0. get some midi file
 
 Google "midi download" and get them :-)
 
-### midi → text string
+### 1. midi → text string
 
 ```
 python midi2text.py --source test.mid
@@ -51,7 +51,7 @@ this will generate a txt sufficed file which looks like this
 0_b0_65_00 0_b0_64_02 0_b0_06_40 60_b0_65_00 0_b0_64_01 0_b0_06_40 0_b0_26_00 ...
 ```
 
-### encode text string with utf-8 code
+### 2. encode text string with utf-8 code
 
 ```
 python3 utfCoder.py --source test.mid3.txt
@@ -61,7 +61,7 @@ so that your model will treat your input as those id strings and generate new on
 
 keep the reverse dictionary pickle file, you will use it to decode generated sample files after training
 
-### train your model
+### 3. train your model
 
 read karpathy's readme to get your environment ready → https://github.com/karpathy/char-rnn
  
@@ -71,26 +71,28 @@ put your encoded source file in a specific folder and rename it to input.txt
 train.lua -data_dir data/your_input_file_folder -rnn_size 512 -num_layers 4 -dropout 0.5
 ```
 
-### sample some coded melody
+### 4. sample some coded melody
 
 you will get some .t7 files after the training, use the final one to sample some output
 ```
 th sample.lua cv/lm_lstm_epoch50.00_1.0000.t7 -length 100 -verbose 0 >sample.utf8
 ```
 
-### decode sample to text string
+### 5. decode sample to text string
 
 find your reverse dictionary pickle file, rename it to specific file name so that this script can find and load it
 ```
 python3 utfDecoder.py --source ../your_folder/sample.utf8
 ```
 
-### text string → midi
+### 6. text string → midi
 
 ```
 python text2midi.py --source ../your_folder/sample.utf8decode
 ```
-then you will get your generated midi file, try to play it!
+then you will get your generated midi file
+
+### 7. play it!
 
 ## To-do list
 
