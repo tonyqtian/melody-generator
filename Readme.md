@@ -35,6 +35,41 @@ g = tflearn.regression(g, optimizer='adam', loss='categorical_crossentropy',
                        learning_rate=0.001)
 ```
 
+## Quick Start
+
+### Get some midi file
+
+Google "midi download" and get them
+
+### midi → text string
+
+### encode text string with utf-8 code
+
+### train your model
+
+ read karpathy's readme to get your environment ready → https://github.com/karpathy/char-rnn
+ 
+```
+th train.lua ...
+```
+### sample some coded melody
+
+### decode sample to text string
+
+### text string → midi
+
+get your generated midi melody, try to play it!
+
+## To-do list
+
+I will adopt the following in the future
+
+1. Embedding will be added to make the training memory friendly
+
+2. Add more co-related midi melodies to enlarge the learning material
+
+3. Use GPU to speed up the training
+
 -----------------------------------------------
 ## Karpathy's raw Readme
 please follow Karpathy's readme to setup your experiment for training and sampling.
