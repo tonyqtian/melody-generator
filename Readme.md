@@ -3,7 +3,7 @@
 
 A midi melody generator based on LSTM. The model generator is a char based LSTM model trainer coded in Lua by Karpathy. I adopted a modified version of it which added utf code support by zhangzibin. https://github.com/karpathy/char-rnn and Nal Kalchbrenner's paper http://arxiv.org/abs/1507.01526
 
-## Understand LSTM Networks
+## Understanding LSTM Networks
 
 This is the best introduction about LSTM networks I found.
 
