@@ -1,5 +1,6 @@
 
 # Melody Generator
+
 A midi melody generator based on LSTM. The model generator is a char based LSTM model trainer coded in Lua by Karpathy. I adopted a modified version of it which added utf code support by zhangzibin. https://github.com/karpathy/char-rnn and Nal Kalchbrenner's paper http://arxiv.org/abs/1507.01526
 
 ## Understangd LSTM Networks
@@ -31,19 +32,32 @@ g = tflearn.dropout(g, 0.5)
 g = tflearn.lstm(g, 512)
 g = tflearn.dropout(g, 0.5)
 g = tflearn.fully_connected(g, len(char_idx), activation='softmax')
-g = tflearn.regression(g, optimizer='adam', loss='categorical_crossentropy',
-                       learning_rate=0.001)
+g = tflearn.regression(g, optimizer='adam', loss='categorical_crossentropy', learning_rate=0.0)
 ```
 
 ## Quick Start
 
 ### Get some midi file
 
-Google "midi download" and get them
+Google "midi download" and get them :-)
 
 ### midi → text string
 
+```
+python midi2text.py --source test.mid
+```
+this will generate a txt sufficed file which looks like this
+```
+0_b0_65_00 0_b0_64_02 0_b0_06_40 60_b0_65_00 0_b0_64_01 0_b0_06_40 0_b0_26_00 ...
+```
+
 ### encode text string with utf-8 code
+
+```
+python3 utfCoder.py --source test.mid3.txt
+```
+it will generate a dictionary to encode each string into an id, and encode those ids into utf-8
+so that your model will treat your input as those id strings and generate new ones after training
 
 ### train your model
 
