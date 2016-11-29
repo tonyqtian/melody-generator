@@ -34,7 +34,7 @@ g = tflearn.dropout(g, 0.5)
 g = tflearn.fully_connected(g, len(char_idx), activation='softmax')
 g = tflearn.regression(g, optimizer='adam', loss='categorical_crossentropy', learning_rate=0.0)
 ```
-
+-------------------------------------------------
 ## Quick Start
 
 ### 0. get some midi file
@@ -94,9 +94,10 @@ then you will get your generated midi file
 
 ### 7. play it!
 
+-----------------------------------------
 ## To-do list
 
-I'm planning to do the following in the future
+I'm planning to add the following features in the future
 
 1. Embedding will be added to make the training memory friendly
 
@@ -136,6 +137,8 @@ You can try it as follow:
 ```bash
 $ th convert.lua gpu_model cpu_model
 ```
+
+---------------------------------------------------------
 ## License
 
 MIT
