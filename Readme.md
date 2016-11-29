@@ -1,5 +1,5 @@
 
-# melody generator
+# Midi Melody Generator
 A midi melody generator based on LSTM. The model generator is a char based LSTM model trainer coded in Lua by Karpathy. I adopted a modified version of it which added utf code support by zhangzibin. https://github.com/karpathy/char-rnn and Nal Kalchbrenner's paper http://arxiv.org/abs/1507.01526
 
 ## Understangd LSTM Networks
@@ -10,8 +10,11 @@ http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 ## Structure of this model
 
-![MODEL STRUCTURE](/demo/model-lstm-layer.png?raw=true "Model Structure")
-https://github.com/tonyqtian/melody-generator/blob/master/demo/model-lstm-layer.png?raw=true
+<!---
+![MODEL STRUCTURE](/demo/model-lstm-layer.png?raw=true)
+-->
+
+<a href="url"><img src="/demo/model-lstm-layer.png" height="300" ></a>
 
 -----------------------------------------------
 ## Karpathy's raw Readme
