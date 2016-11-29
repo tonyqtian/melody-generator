@@ -19,9 +19,11 @@ I adopted a 4 layer LSTM each with 512 node and 0.5 dropout between each layer.
 [ ](/demo/model-lstm-layer.png?raw=true)
 <a href="url"><img src="/demo/model-lstm-layer.png" height="300" ></a>
 
-Pesudo-code like this:
+some tensorflow pesudo-code like this:
 ```python
 g = tflearn.input_data([None, maxlen, len(char_idx)])
+g = tflearn.lstm(g, 512, return_seq=True)
+g = tflearn.dropout(g, 0.5)
 g = tflearn.lstm(g, 512, return_seq=True)
 g = tflearn.dropout(g, 0.5)
 g = tflearn.lstm(g, 512, return_seq=True)
