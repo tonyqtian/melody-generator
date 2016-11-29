@@ -15,7 +15,7 @@ http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 ![MODEL STRUCTURE](/demo/model-lstm-layer.png?raw=true)
 -->
 
-I adopted a 4 layer LSTM each with 512 node and 0.5 dropout between each layer.
+I adopted a 4 layer LSTM each with 512 node and 0.5 dropout
 
 [ ](/demo/model-lstm-layer.png?raw=true)
 <a href="url"><img src="/demo/model-lstm-layer.png" height="300" ></a>
@@ -59,24 +59,42 @@ python3 utfCoder.py --source test.mid3.txt
 it will generate a dictionary to encode each string into an id, and encode those ids into utf-8
 so that your model will treat your input as those id strings and generate new ones after training
 
+keep the reverse dictionary pickle file, you will use it to decode generated sample files after training
+
 ### train your model
 
- read karpathy's readme to get your environment ready → https://github.com/karpathy/char-rnn
+read karpathy's readme to get your environment ready → https://github.com/karpathy/char-rnn
  
+put your encoded source file in a specific folder and rename it to input.txt
+
 ```
-th train.lua ...
+train.lua -data_dir data/your_input_file_folder -rnn_size 512 -num_layers 4 -dropout 0.5
 ```
+
 ### sample some coded melody
+
+you will get some .t7 files after the training, use the final one to sample some output
+```
+th sample.lua cv/lm_lstm_epoch50.00_1.0000.t7 -length 100 -verbose 0 >sample.utf8
+```
 
 ### decode sample to text string
 
+find your reverse dictionary pickle file, rename it to specific file name so that this script can find and load it
+```
+python3 utfDecoder.py --source ../your_folder/sample.utf8
+```
+
 ### text string → midi
 
-get your generated midi melody, try to play it!
+```
+python text2midi.py --source ../your_folder/sample.utf8decode
+```
+then you will get your generated midi file, try to play it!
 
 ## To-do list
 
-I will adopt the following in the future
+I'm planning to do the following in the future
 
 1. Embedding will be added to make the training memory friendly
 
