@@ -87,9 +87,3 @@ ENV/
 
 # Rope project settings
 .ropeproject
---help
-midi_track11_no_ss_4lstm512.log
-cv/lm_midi_track11_no_ss_4lstm512_epoch3.44_5.2770.t7
-cv
-midi_track11_4lstm512.log
-/data-midi3/
