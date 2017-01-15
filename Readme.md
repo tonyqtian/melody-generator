@@ -3,12 +3,6 @@
 
 A midi melody generator. This model generator is based on a poetry lstm model generator coded by dvictor. I modified for midi words generator. https://github.com/dvictor/lstm-poetry-word-based
 
-## Understanding LSTM Networks
-
-This is the best introduction about LSTM networks I found.
-
-http://colah.github.io/posts/2015-08-Understanding-LSTMs/
-
 ## Structure of this model
 
 <!---
@@ -86,6 +80,13 @@ then you will get your generated midi file
 3. Use GPU to speed up the training
 
 -----------------------------------------------
+
+## Understanding LSTM Networks
+
+This is the best introduction about LSTM networks I found.
+
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
 ## Karpathy's raw Readme
 
 this is where my original idea came from...
